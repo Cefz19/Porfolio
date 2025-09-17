@@ -1,14 +1,7 @@
-import { SharedResources } from "../shared/SharedResources.js";
-import '../loader/loader.js';
-import '../header/navbart.js';
-import '../home/homeComponent.js';
-import '../about/aboutme.js';
-import '../service/services.js';
-import '../skill/skills.js';
-import '../contact/contactme.js';
+import * as MainModules from '../../Modules/MainModules.js';
 
 
-class LayoutComponent extends SharedResources {
+class LayoutComponent extends MainModules.SharedResources {
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `    
@@ -18,10 +11,18 @@ class LayoutComponent extends SharedResources {
           <navbart-component></navbart-component>
         </header>
         <main>
-          <home-component></home-component>
-          <aboutme-component></aboutme-component>
-          <services-component></services-component>
-          <skills-component></skills-component>
+          <section data-section='home'>
+            <home-component></home-component>
+          </section>
+          <section data-section='about'>
+            <aboutme-component></aboutme-component>
+          </section>
+          <section data-section='service'>
+            <services-component></services-component>
+          </section>
+          <section data-section='skills'>
+            <skills-component></skills-component>
+          </section>
         </main>
         <footer>
           <contactme-component></contactme-component>
@@ -42,6 +43,11 @@ class LayoutComponent extends SharedResources {
     const template = this.getTemplate();
     const clone = template.content.cloneNode(true);
     this.shadowRoot.appendChild(clone);
+
+    const lazyLoader = new MainModules.SetupLazyLoader(this.shadowRoot);
+    lazyLoader.lazyloadSections();
+
+
 
     //Espera a que el loader termine
 
@@ -65,6 +71,7 @@ class LayoutComponent extends SharedResources {
 
     this.initializeTyped();
     await this.loadBoxiconsCSS();
+
   }
  
 }
