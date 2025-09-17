@@ -1,0 +1,101 @@
+
+/* Home */
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0;
+}
+.home-img {
+    width: 280px;
+    height: 280px;
+    padding: 30px 10px;
+    background-image: url('/assets/img/Cesar.png');
+    background-size: cover;
+    background-position: center;
+    border: 4px solid rgb(60, 18, 45);
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    
+}
+.home-content {
+    margin: 8px;
+    padding: 0 50px;
+    max-width: 600px;
+}
+.home-content h3 {
+    font-size: 25px;
+    font-weight: 400;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1.5s;
+}
+/* Type-Speed */
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 10px;
+}
+.home-content h3 span {
+    color: #0ef;
+}
+.home-content h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: -1px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content p {
+    font-size: 18px;
+    font-weight: 400;
+    opacity:  0;
+    animation: slideLeft 1s ease forwards;
+}
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+}
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.btn-box:hover {
+    box-shadow: 0 0 5px rgb(0, 201, 201),
+    0 0 5px rgb(0, 201, 201), 0 0 20px rgb(0, 201, 201),
+    0 0 70px rgb(0, 201, 201), 0 0 150px rgb(0, 201, 201);
+}
