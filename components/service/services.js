@@ -1,4 +1,5 @@
 import { SharedResources } from "../shared/SharedResources.js";
+import { ServicesCard } from "../../data/dataService.js";
 
 class ServicesComponent extends SharedResources {
   getTemplate() {
@@ -6,22 +7,23 @@ class ServicesComponent extends SharedResources {
     template.innerHTML = `    
         <!-- SERVICES -->
 
-    <div class="services" id="services">
+        <div class="services" id="services">
 
-        <div class="container">
+            <div class="container">
 
-            <h1 class="sub-title">My <span>Services</span></h1>
-            
-            <div class="services-list">
-                <div>
-                    <i class='bx bx-code' style='color:rgba(36,220,237,0.74)'></i>
-                    <h2>UI/UX Desing</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste provident dolorem eaque alias pariatur?</p>
-                    <a href="#" class="read">Learm More</a>
+              <h1 class="sub-title">My <span>Services</span></h1>
+                <div class="services-list">
+                    <service-card
+                    icon="bx-code-alt"
+                    color="#ff5733"
+                    job="Frontend Developer"
+                    description="Building responsive and modern websites."
+                    link="https://example.com"
+                    ></service-card>
+
                 </div>
-            </div>
         </div>
-    </div>
+
     `;
     return template;
   }
@@ -33,7 +35,15 @@ class ServicesComponent extends SharedResources {
     await this.loadStyle(
       "/assets/animations/animation.css",
       "/components/service/servicesStyle.css"
+
     );
+
+    console.log("Valores recibidos:");
+    console.log("icon:", this.icon);
+    console.log("color:", this.color);
+    console.log("job:", this.job);
+    console.log("description:", this.description);
+    console.log("link:", this.link);
 
     const template = this.getTemplate();
     const clone = template.content.cloneNode(true);
