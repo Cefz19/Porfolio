@@ -34,7 +34,7 @@ export class ServicesCard extends SharedResources {
                     <i class='bx ${this.icon}' style='color: ${this.color}'></i>
                     <h2>${this.job}</h2>
                     <p>${this.description}</p>
-                    <a href="${this.link}" class="read">Learm More</a>
+                    <a href="${this.link}" class="read read-box">Learm More</a>
                 </div>
             </div>    
         `;
@@ -57,5 +57,5 @@ export class ServicesCard extends SharedResources {
     }
 }
 
-customElements.define('service-card', ServicesCard);
+
 console.log("ServicesCard registrado como <service-card>");

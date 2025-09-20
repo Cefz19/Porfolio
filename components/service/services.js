@@ -14,13 +14,26 @@ class ServicesComponent extends SharedResources {
               <h1 class="sub-title">My <span>Services</span></h1>
                 <div class="services-list">
                     <service-card
-                    icon="bx-code-alt"
-                    color="#ff5733"
-                    job="Frontend Developer"
-                    description="Building responsive and modern websites."
-                    link="https://example.com"
-                    ></service-card>
-
+                      icon="bx-code-alt"
+                      color="#ff5733"
+                      job="Frontend Developer"
+                      description="Building responsive and modern websites."
+                      link="https://example.com">
+                    </service-card>
+                    <service-card
+                      icon="bx-code-alt"
+                      color="#ff5733"
+                      job="Frontend Developer"
+                      description="Building responsive and modern websites."
+                      link="https://example.com">
+                    </service-card>
+                    <service-card
+                      icon="bx-code-alt"
+                      color="#ff5733"
+                      job="Frontend Developer"
+                      description="Building responsive and modern websites."
+                      link="https://example.com">
+                    </service-card>
                 </div>
         </div>
 
@@ -37,20 +50,24 @@ class ServicesComponent extends SharedResources {
       "/components/service/servicesStyle.css"
 
     );
-
-    console.log("Valores recibidos:");
-    console.log("icon:", this.icon);
-    console.log("color:", this.color);
-    console.log("job:", this.job);
-    console.log("description:", this.description);
-    console.log("link:", this.link);
-
     const template = this.getTemplate();
     const clone = template.content.cloneNode(true);
     this.shadowRoot.appendChild(clone);
+
+    const serviceCard = this.shadowRoot.querySelector('service-card');
+
+    if(serviceCard) {
+      serviceCard.getAttribute('icon');
+      serviceCard.getAttribute('color');
+      serviceCard.getAttribute('job');
+      serviceCard.getAttribute('description');
+      serviceCard.getAttribute('link');
+    }
+
     this.initializeTyped();
     await this.loadBoxiconsCSS();
   }
 }
 
+customElements.define('service-card', ServicesCard);
 customElements.define("services-component", ServicesComponent);
