@@ -10,7 +10,7 @@ export const serviceData = [
         icon: "bx-paint",
         color: "#33c4ff",
         job: "UI Designer",
-        description: "Crafting intuitive user interfaces.",
+        description: "Crafting intuitive user interfaces  user interfaces",
         link: "https://example.com/ui"
   },
   {
