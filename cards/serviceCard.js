@@ -34,20 +34,20 @@ export class ServicesCard extends SharedResources {
                     <i class='bx ${this.icon}' style='color: ${this.color}'></i>
                     <h2>${this.job}</h2>
                     <p>${this.description}</p>
-                    <a href="${this.link}" class="read read-box">Learm More</a>
+                    <a href="${this.link}" class="read">Learm More</a>
                 </div>
             </div>    
         `;
         return template;
     }
     async getStyle() {
-    const response = await fetch("/data/dataServiceCardStyle.css");
+    const response = await fetch("/cards/serviceCardStyle.css");
     return response.ok ? response.text() : "<p>Error loader</p>";
     }
     async init() {
     await this.loadStyle(
         '/assets/animations/animation.css',
-        '/data/dataServiceCardStyle.css');
+        '/cards/serviceCardStyle.css');
 
         const template = this.getTemplate();
         const clone = template.content.cloneNode(true);
@@ -58,4 +58,3 @@ export class ServicesCard extends SharedResources {
 }
 
 
-console.log("ServicesCard registrado como <service-card>");

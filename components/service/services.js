@@ -1,9 +1,20 @@
 import { SharedResources } from "../shared/SharedResources.js";
-import { ServicesCard } from "../../data/dataService.js";
+import { ServicesCard } from "../../cards/serviceCard.js";
+import { serviceData } from "../../data/serviceData.js";
 
 class ServicesComponent extends SharedResources {
   getTemplate() {
     const template = document.createElement("template");
+
+    const cardsHTML = serviceData.map(service => `
+        <service-card
+          icon="${service.icon}"
+          color="${service.color}"
+          job="${service.job}"
+          description="${service.description}"
+          link="${service.link}">
+        </service-card>
+      `).join('');
     template.innerHTML = `    
         <!-- SERVICES -->
 
@@ -13,28 +24,9 @@ class ServicesComponent extends SharedResources {
 
               <h1 class="sub-title">My <span>Services</span></h1>
                 <div class="services-list">
-                    <service-card
-                      icon="bx-code-alt"
-                      color="#ff5733"
-                      job="Frontend Developer"
-                      description="Building responsive and modern websites."
-                      link="https://example.com">
-                    </service-card>
-                    <service-card
-                      icon="bx-code-alt"
-                      color="#ff5733"
-                      job="Frontend Developer"
-                      description="Building responsive and modern websites."
-                      link="https://example.com">
-                    </service-card>
-                    <service-card
-                      icon="bx-code-alt"
-                      color="#ff5733"
-                      job="Frontend Developer"
-                      description="Building responsive and modern websites."
-                      link="https://example.com">
-                    </service-card>
+                  ${cardsHTML}
                 </div>
+            </div>
         </div>
 
     `;
