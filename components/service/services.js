@@ -1,6 +1,6 @@
 import { SharedResources } from "../shared/SharedResources.js";
-import { ServicesCard } from "../../cards/serviceCard.js";
 import { serviceData } from "../../data/serviceData.js";
+import { ServicesCard } from "../../cards/serviceCards/serviceCard.js";
 
 class ServicesComponent extends SharedResources {
   getTemplate() {

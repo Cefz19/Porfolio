@@ -1,4 +1,5 @@
 import { SharedResources } from "../shared/SharedResources.js";
+import { TestsProjectCard } from "../../cards/testCard/testProjectCard.js";
 
 class TestsComponent extends SharedResources {
   getTemplate() {
@@ -16,16 +17,10 @@ class TestsComponent extends SharedResources {
 
                 <div class="portfolio-content">
 
-                    <div class="row">
-                        <img src="#" alt="Desing1">
-                        <div class="layer">
-                            <h5>UI/UX Desing</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quae quis ullam, rem
-                                delectus quasi facere tempora error voluptatem est tenetur rerum.</p>
-                            <a href="#"><i class='bx bx-link-external' style="color: rgba(74, 255, 149, 0.703)"></i>
-                            </a>
-                        </div>
-                    </div>
+                  <testproject-car
+
+                  >
+                  </testproject-car>
                 </div>
             </div>
         </div>
@@ -51,4 +46,5 @@ class TestsComponent extends SharedResources {
  
 }
 
+customElements.define('testproject-car', TestsProjectCard);
 customElements.define("tests-component", TestsComponent);

@@ -1,4 +1,4 @@
-import { SharedResources } from '../Modules/MainModules.js';
+import { SharedResources } from '../../Modules/MainModules.js';
 
 export class ServicesCard extends SharedResources {
     static get observedAttributes(){
@@ -41,13 +41,13 @@ export class ServicesCard extends SharedResources {
         return template;
     }
     async getStyle() {
-    const response = await fetch("/cards/serviceCardStyle.css");
+    const response = await fetch("/cards/serviceCards/serviceCardStyle.css");
     return response.ok ? response.text() : "<p>Error loader</p>";
     }
     async init() {
     await this.loadStyle(
         '/assets/animations/animation.css',
-        '/cards/serviceCardStyle.css');
+        '/cards/serviceCards/serviceCardStyle.css');
 
         const template = this.getTemplate();
         const clone = template.content.cloneNode(true);

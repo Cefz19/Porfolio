@@ -1,7 +1,7 @@
 export const TestSProjectData = [
     {
         title: 'Project',
-        src: 'img',
+        img: 'img',
         project: 'UI/UX Desing',
         description: 'Developer Desing to cuadra manufactory',
         icon: 'bx-link-external',
