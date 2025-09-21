@@ -20,7 +20,7 @@ class LayoutComponent extends MainModules.SharedResources {
           <section data-section='service'>
             <services-component></services-component>
           </section>
-          <section data-section='service'>
+          <section data-section='tests'>
             <tests-component></tests-component>
           </section>
           <section data-section='skills'>

@@ -1,4 +1,4 @@
-export const TestSProjectData = [
+export const testSProjectData = [
     {
         title: 'Project',
         img: 'img',

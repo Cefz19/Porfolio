@@ -1,14 +1,25 @@
 import { SharedResources } from "../shared/SharedResources.js";
 import { TestsProjectCard } from "../../cards/testCard/testProjectCard.js";
+import { testSProjectData } from "../../data/testProjectData.js";
+
 
 class TestsComponent extends SharedResources {
   getTemplate() {
     const template = document.createElement("template");
+
+    const testCardHTML = testSProjectData.map(test => `
+      <testproject-car
+      "img"="${test.img}"
+      "project"="${test.project}"
+      "description"="${test.description}"
+      "icon"="${test.icon}"
+      "color"="${test.color}"
+      "link"="${test.link}"
+      >
+      </testproject-car>
+      `);
     template.innerHTML = `    
-
         <!--   TEST PROJECT   -->
-
-
     <section>
         <div id="portfolio" id="project">
             <div class="main-text" id="project">
@@ -16,11 +27,7 @@ class TestsComponent extends SharedResources {
                 <h2>The Test <span>Project</span></h2>
 
                 <div class="portfolio-content">
-
-                  <testproject-car
-
-                  >
-                  </testproject-car>
+                  ${testCardHTML}
                 </div>
             </div>
         </div>
@@ -40,6 +47,18 @@ class TestsComponent extends SharedResources {
     const template = this.getTemplate();
     const clone = template.content.cloneNode(true);
     this.shadowRoot.appendChild(clone);
+
+    const testCard = this.shadowRoot.querySelector('testproject-car');
+
+    if(testCard) {
+      testCard.getAttribute('img');
+      testCard.getAttribute('project');
+      testCard.getAttribute('description');
+      testCard.getAttribute('icon');
+      testCard.getAttribute('color');
+      testCard.getAttribute('link');
+    }
+
     this.initializeTyped();
     await this.loadBoxiconsCSS();
   }

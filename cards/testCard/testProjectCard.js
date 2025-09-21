@@ -47,13 +47,13 @@ export class TestsProjectCard extends SharedResources {
         return template;
     }
     async getStyle() {
-    const response = await fetch("/cards/serviceCardStyle.css");
+    const response = await fetch("/cards/testCard/testProjectCardStyle.css");
     return response.ok ? response.text() : "<p>Error loader</p>";
     }
     async init() {
     await this.loadStyle(
         '/assets/animations/animation.css',
-        '/cards/serviceCardStyle.css');
+        '/cards/testCard/testProjectCardStyle.css');
 
         const template = this.getTemplate();
         const clone = template.content.cloneNode(true);

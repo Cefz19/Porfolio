@@ -12,9 +12,9 @@
     padding: 0 35px;
 }
 .container1 {
-    width: 650px;
+    width: 500px;
     height: 500px;
-    padding: 20px 100px;
+    padding: 10px 80px;
     
 }
 /* Technical */
@@ -140,13 +140,14 @@
 
 /* Radial */
 
+
 .radial-bars {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: initial;
 }
 .radial-bars .radial-bar {
     width: 35%;
