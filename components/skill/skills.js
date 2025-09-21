@@ -62,6 +62,7 @@ class SkillsComponent extends SharedResources {
 
             </div>
 
+            <!-- RADIAL -->
 
             <div class="container1" id="skills">
                 <h1 class="heading1">Professional Skills</h1>

@@ -9,15 +9,14 @@ class TestsComponent extends SharedResources {
 
     const testCardHTML = testSProjectData.map(test => `
       <testproject-car
-      "img"="${test.img}"
-      "project"="${test.project}"
-      "description"="${test.description}"
-      "icon"="${test.icon}"
-      "color"="${test.color}"
-      "link"="${test.link}"
-      >
+      img="${test.img}"
+      project="${test.project}"
+      description="${test.description}"
+      icon="${test.icon}"
+      color="${test.color}"
+      link="${test.link}">
       </testproject-car>
-      `);
+      `).join('');
     template.innerHTML = `    
         <!--   TEST PROJECT   -->
     <section>
@@ -48,7 +47,7 @@ class TestsComponent extends SharedResources {
     const clone = template.content.cloneNode(true);
     this.shadowRoot.appendChild(clone);
 
-    const testCard = this.shadowRoot.querySelector('testproject-car');
+    const testCard = this.shadowRoot.querySelectorAll('testproject-car');
 
     if(testCard) {
       testCard.getAttribute('img');
