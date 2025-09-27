@@ -1,22 +1,26 @@
 export const radialSkillData = [
     {
         percentage: 90,
-        label: 'Creativity',
+        text: 'Creativity',
         class: 'path-1',
+        radius: 80
     },
     {
         percentage: 75,
-        label: 'Problem Solving',
+        text: 'Problem Solving',
         class: 'path-2',
+        radius: 80
     },
     {
         percentage: 85,
-        label: 'Teamwork',
+        text: 'Teamwork',
         class: 'path-3',
+        radius: 80
     },
     {
         percentage: 65,
-        label: 'Communication',
+        text: 'Communication',
         class: 'path-4',
+        radius: 80
     },
 ]

@@ -8,7 +8,7 @@ export const progressSkillData = [
     {
         icon: 'bxl-css3',
         color: '#147bbc',
-        title: 'HTML',
+        title: 'CSS',
         tecnology: 'html'
     },
     {

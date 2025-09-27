@@ -49,14 +49,16 @@ class TestsComponent extends SharedResources {
 
     const testCard = this.shadowRoot.querySelectorAll('testproject-car');
 
-    if(testCard) {
-      testCard.getAttribute('img');
-      testCard.getAttribute('project');
-      testCard.getAttribute('description');
-      testCard.getAttribute('icon');
-      testCard.getAttribute('color');
-      testCard.getAttribute('link');
+    testCard.forEach(card => {
+      if(card) {
+      card.getAttribute('img');
+      card.getAttribute('project');
+      card.getAttribute('description');
+      card.getAttribute('icon');
+      card.getAttribute('color');
+      card.getAttribute('link');
     }
+    })
 
     this.initializeTyped();
     await this.loadBoxiconsCSS();

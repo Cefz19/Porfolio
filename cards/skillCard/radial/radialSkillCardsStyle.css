@@ -1,0 +1,72 @@
+.radial-bar {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.radial-bar svg {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 110px;
+    height: 130px;
+}
+.radial-bar svg circle {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 2fr);
+}
+.radial-bar .progress-bar {
+    stroke-width: 10;
+    stop-color: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+.path {
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+.path-1 {
+    animation: animate-path1 1s 1s linear forwards
+}
+.path-2 {
+    animation: animate-path2 1s 1s linear forwards
+}
+
+.path-3 {
+    animation: animate-path3 1s 1s linear forwards
+}
+
+.path-4 {
+    animation: animate-path4 1s 1s linear forwards
+}
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+.radial-bar .text {
+    width: 100%;
+    position: absolute;
+    text-align: start;
+    left: 70%;
+    transform: translateX(-30px);
+    font-size: 17px;
+    font-weight: bold;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
